@@ -206,7 +206,7 @@ bool RxHandlerSTM32::CANReadFrame(SimpleCanRxHeader* SCHeader, uint8_t* pData, i
 	{
 		// Convert the header
 		SCHeader->Identifier = _rxHeader.Identifier;
-		SCHeader->DataLength = DLCtoBytes[_rxHeader.DataLength>>16];			
+		SCHeader->DataLength = DLCtoBytes[_rxHeader.DataLength];			
 		SCHeader->RxTimestamp = _rxHeader.RxTimestamp;
 		SCHeader->FilterIndex = _rxHeader.FilterIndex;
 		SCHeader->IsFilterMatchingFrame = _rxHeader.IsFilterMatchingFrame;
